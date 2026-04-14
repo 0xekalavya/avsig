@@ -1,0 +1,275 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fafafa;
+  color: #0a0a0a;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #0a0a0a;
+  color: #fafafa;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #fafafa;
+}
+::-webkit-scrollbar-thumb {
+  background: #e4e4e7;
+  border-radius: 2px;
+}
+
+.docs-page {
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+.docs-container {
+  display: flex;
+  gap: 48px;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.docs-sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 32px;
+  align-self: flex-start;
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
+  padding-top: 48px;
+}
+
+.docs-main {
+  flex: 1;
+  padding-top: 48px;
+  padding-bottom: 80px;
+  min-width: 0;
+}
+
+.docs-toc-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.docs-toc-link {
+  display: block;
+  font-size: 13px;
+  color: #71717a;
+  text-decoration: none;
+  padding: 6px 0;
+  border-left: 2px solid transparent;
+  padding-left: 12px;
+  margin-left: -12px;
+  transition: color 0.1s ease, border-color 0.1s ease;
+}
+
+.docs-toc-link:hover,
+.docs-toc-link:focus-visible {
+  color: #0a0a0a;
+  border-left-color: #0a0a0a;
+}
+
+.docs-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.docs-hamburger span {
+  width: 100%;
+  height: 2px;
+  background: #0a0a0a;
+  transition: all 0.3s ease;
+}
+
+.docs-hamburger:focus {
+  outline: 2px solid #0a0a0a;
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .docs-container {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .docs-sidebar {
+    position: static;
+    width: 100%;
+    max-height: none;
+    overflow: visible;
+    padding-top: 0;
+  }
+
+  .docs-main {
+    padding-top: 24px;
+    padding-bottom: 48px;
+  }
+
+  .docs-hamburger {
+    display: none;
+  }
+
+  .docs-toc-nav {
+    display: flex;
+  }
+
+  .docs-toc-nav--open {
+    display: flex;
+  }
+}
+
+@media (max-width: 640px) {
+  .docs-container {
+    padding: 0 16px;
+  }
+
+  .docs-toc-link {
+    padding-left: 10px;
+    margin-left: -10px;
+  }
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.docs-link {
+  transition: background 0.2s ease;
+}
+
+.page-main {
+  flex: 1;
+  padding: 32px 24px;
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-title p {
+  max-width: 600px;
+}
+
+.token-input-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.trust-banner {
+  width: 100%;
+}
+
+.trust-banner__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trust-banner__fixed-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.token-diff-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.claims-section-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.claims-section-key,
+.claims-section-value {
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .app-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .page-main {
+    padding: 20px 16px;
+  }
+
+  .page-title h1 {
+    font-size: 24px;
+  }
+
+  .page-title p {
+    font-size: 14px;
+    max-width: none;
+  }
+
+  .token-input-actions {
+    justify-content: stretch;
+  }
+
+  .token-input-actions button {
+    width: 100%;
+    max-width: none;
+  }
+
+  .trust-banner__top,
+  .trust-banner__fixed-inner {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .trust-banner__fixed {
+    padding: 10px 14px;
+  }
+
+  .trust-banner__fixed-inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .token-diff-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .claims-section-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .claims-section-key,
+  .claims-section-value {
+    width: 100%;
+  }
+}
