@@ -15,7 +15,7 @@ export function TrustBanner({ trust, checks }: Props) {
   const [displayScore, setDisplayScore] = useState(0)
   const bannerRef = useRef<HTMLDivElement>(null)
 
-  // show banner only after user scrolls down a bit
+  
   useEffect(() => {
     function onScroll() {
       setVisible(window.scrollY > 120)
@@ -24,7 +24,7 @@ export function TrustBanner({ trust, checks }: Props) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // animate score counting up
+  
   useEffect(() => {
     setAnimated(false)
     setDisplayScore(0)
@@ -47,7 +47,7 @@ export function TrustBanner({ trust, checks }: Props) {
 
   return (
     <>
-      {/* Inline version — always visible at top of results */}
+      
       <div
         ref={bannerRef}
         className="trust-banner"
@@ -103,7 +103,7 @@ export function TrustBanner({ trust, checks }: Props) {
           </div>
         </div>
 
-        {/* Progress bar */}
+        
         <div style={{
           width: '100%', height: '6px',
           background: '#e4e4e7', borderRadius: '999px',
@@ -118,7 +118,7 @@ export function TrustBanner({ trust, checks }: Props) {
           }} />
         </div>
 
-        {/* Score breakdown */}
+        
         <div style={{ display: 'flex', gap: '16px', marginTop: '10px' }}>
           {[
             { label: 'Checks run', value: checks.length },
@@ -133,7 +133,7 @@ export function TrustBanner({ trust, checks }: Props) {
         </div>
       </div>
 
-      {/* Sticky version — appears on scroll */}
+      
       <div className="trust-banner__fixed" style={{
         position: 'fixed',
         top: 0,
@@ -154,7 +154,7 @@ export function TrustBanner({ trust, checks }: Props) {
           alignItems: 'center',
           gap: '16px',
         }}>
-          {/* Score */}
+          
           <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px', flexShrink: 0 }}>
             <span style={{ fontSize: '20px', fontWeight: 700, color: trust.color }}>
               {trust.score}%
@@ -164,7 +164,7 @@ export function TrustBanner({ trust, checks }: Props) {
             </span>
           </div>
 
-          {/* Progress bar */}
+          
           <div style={{
             flex: 1, height: '5px',
             background: '#e4e4e7', borderRadius: '999px',
@@ -178,7 +178,7 @@ export function TrustBanner({ trust, checks }: Props) {
             }} />
           </div>
 
-          {/* Pills */}
+      
           <div style={{ display: 'flex', gap: '6px', flexShrink: 0 }}>
             {critical > 0 && (
               <span style={{
@@ -209,7 +209,7 @@ export function TrustBanner({ trust, checks }: Props) {
             )}
           </div>
 
-          {/* avsig label */}
+          
           <span style={{ fontSize: '11px', color: '#a1a1aa', flexShrink: 0 }}>
             avsig
           </span>
