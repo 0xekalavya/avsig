@@ -32,7 +32,7 @@ function diffClaims(
     }
   })
 
-  // sort: changed first, then added/removed, then same
+  
   const order = { changed: 0, added: 1, removed: 1, same: 2 }
   return entries.sort((a, b) => order[a.type] - order[b.type])
 }
@@ -85,7 +85,7 @@ export function TokenDiff() {
         Token diff
       </p>
       <p style={{ fontSize: '12px', color: '#71717a', marginBottom: '16px' }}>
-        Compare two JWTs from different sessions — spot what changed
+        Compare two JWTs from different sessions - spot what changed
       </p>
 
       <div className="token-diff-grid" style={{ display: 'grid', gap: '10px', marginBottom: '10px' }}>
