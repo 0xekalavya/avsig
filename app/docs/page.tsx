@@ -78,7 +78,7 @@ export default function DocsPage() {
     <main className="docs-page" style={{ minHeight: '100vh', background: '#fafafa' }}>
       <div className="docs-container">
 
-        {/* Sidebar */}
+        
         <aside className="docs-sidebar">
           <Link href="/" style={{
             position: 'sticky', top: 0, zIndex: 2,
@@ -118,10 +118,10 @@ export default function DocsPage() {
           </nav>
         </aside>
 
-        {/* Main content */}
+        
         <div className="docs-main">
 
-          {/* Header */}
+          
           <div style={{ marginBottom: '48px' }}>
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: '6px',
@@ -145,7 +145,7 @@ export default function DocsPage() {
             </div>
           </div>
 
-          {/* Overview */}
+          
           <Section id="overview" title="Overview">
             <p style={{ fontSize: '14px', color: '#3f3f46', lineHeight: 1.7, marginBottom: '12px' }}>
               The avsig API lets you programmatically decode and audit JSON Web Tokens. Send a JWT, get back a full security report - decoded claims, expiry status, and results of 8 automated security checks with a trust score.
@@ -155,7 +155,7 @@ export default function DocsPage() {
             </p>
           </Section>
 
-          {/* Auth */}
+          
           <Section id="auth" title="Authentication">
             <p style={{ fontSize: '14px', color: '#3f3f46', lineHeight: 1.7, marginBottom: '12px' }}>
               Pass your API key in the <Code>X-API-Key</Code> header on every request. Alternatively use the <Code>Authorization: Bearer {'<key>'}</Code> header.
@@ -172,7 +172,7 @@ Content-Type: application/json`}</CodeBlock>
             </div>
           </Section>
 
-          {/* Endpoint */}
+          
           <Section id="inspect" title="POST /inspect">
             <p style={{ fontSize: '14px', color: '#3f3f46', lineHeight: 1.7, marginBottom: '16px' }}>
               Decodes and audits a JWT token. Returns decoded claims, expiry info, trust score, and all security check results.
@@ -204,7 +204,7 @@ Content-Type: application/json`}</CodeBlock>
   -d '{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"}'`}</CodeBlock>
           </Section>
 
-          {/* Response */}
+          
           <Section id="response" title="Response schema">
             <CodeBlock>{`{
   "success": true,
@@ -220,7 +220,7 @@ Content-Type: application/json`}</CodeBlock>
     },
     "payload": {
       "sub": "1234567890",
-      "name": "John Doe",
+      "name": "sadiq salodgi",
       "iat": 1516239022
     },
     "expiry": {
@@ -266,7 +266,7 @@ Content-Type: application/json`}</CodeBlock>
             </div>
           </Section>
 
-          {/* Security checks */}
+          
           <Section id="checks" title="Security checks">
             <p style={{ fontSize: '14px', color: '#3f3f46', lineHeight: 1.7, marginBottom: '16px' }}>
               Every token is run through 8 automated checks. Results are returned in the <Code>data.checks</Code> array.
@@ -289,7 +289,7 @@ Content-Type: application/json`}</CodeBlock>
             </div>
           </Section>
 
-          {/* Errors */}
+          
           <Section id="errors" title="Error codes">
             <div style={{ border: '1px solid #e4e4e7', borderRadius: '8px', overflow: 'hidden' }}>
               {[
@@ -318,7 +318,7 @@ Content-Type: application/json`}</CodeBlock>
             </div>
           </Section>
 
-          {/* Code examples */}
+          
           <Section id="examples" title="Code examples">
             <p style={{ fontSize: '13px', fontWeight: 600, color: '#0a0a0a', marginBottom: '8px' }}>JavaScript / Node.js</p>
             <CodeBlock>{`const response = await fetch('https://avsig.vercel.app/api/v1/inspect', {
@@ -371,7 +371,7 @@ if data['summary']['critical'] > 0:
     fi`}</CodeBlock>
           </Section>
 
-          {/* Plans */}
+          
           <Section id="plans" title="Plans & limits">
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
               {[
