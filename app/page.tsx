@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#fafafa' }}>
-      {/* Top Header */}
+      
       <header className="app-header" style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: '16px 24px', background: 'white', borderBottom: '1px solid #e4e4e7',
@@ -73,14 +73,14 @@ export default function Home() {
             background: 'white', transition: 'background 0.2s'
           }}
         >
-          API Docs →
+          API Docs 
         </a>
       </header>
 
       <main className="page-main" style={{ flex: 1, padding: '32px 24px' }}>
         <div className="page-container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           
-          {/* Title Area */}
+          
           <div className="page-title" style={{ marginBottom: '32px' }}>
             <h1 style={{
               fontSize: '28px', fontWeight: 700, color: '#0a0a0a',
@@ -103,11 +103,11 @@ export default function Home() {
             gridTemplateColumns: 'minmax(0, 1fr)', 
             gap: '32px' 
           }}>
-            {/* Input & Top State */}
+            
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', gridColumn: '1 / -1' }}>
               <TokenInput onResult={handleResult} />
 
-              {/* Error */}
+              
               {error && (
                 <div style={{
                   border: '1px solid #fecaca',
@@ -121,10 +121,10 @@ export default function Home() {
                 </div>
               )}
 
-              {/* Loading */}
+              
               {isPending && <Spinner />}
 
-              {/* Empty state */}
+              
               {!isPending && !result && !error && (
                 <div style={{
                   marginTop: '16px',
@@ -143,7 +143,7 @@ export default function Home() {
               )}
             </div>
 
-            {/* Results */}
+            
             {!isPending && result && (
               <div style={{
                 gridColumn: '1 / -1',
@@ -172,7 +172,7 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Footer */}
+      
       <footer style={{
         padding: '24px', borderTop: '1px solid #e4e4e7', background: 'white',
         textAlign: 'center', fontSize: '12px', color: '#89CFF0'
