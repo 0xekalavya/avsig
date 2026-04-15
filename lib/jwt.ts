@@ -91,7 +91,7 @@ function runChecks(
       severity: 'warning' as const,
       title: 'Possible sensitive data in payload',
       detail:
-        'JWT payload is base64-encoded, not encrypted — anyone can decode it. Never store passwords, secrets, or PII here.',
+        'JWT payload is base64-encoded, not encrypted - anyone can decode it. Never store passwords, secrets, or PII here.',
       pass: !JSON.stringify(payload)
         .toLowerCase()
         .match(/password|secret|ssn|credit.?card|cvv|private.?key/),
@@ -111,7 +111,7 @@ function runChecks(
       severity: 'info' as const,
       title: 'kid header present',
       detail:
-        'kid selects the verification key. Ensure your server validates it strictly — unsanitized kid values have led to SQL injection and path traversal bugs.',
+        'kid selects the verification key. Ensure your server validates it strictly - unsanitized kid values have led to SQL injection and path traversal bugs.',
       pass: true,
     },
     {
