@@ -32,7 +32,7 @@ export function ExpiryBadge({ info }: { info: ExpiryInfo }) {
       <div>
         <p style={{ fontSize: '13px', fontWeight: 600, color: '#92400e' }}>No expiry set</p>
         <p style={{ fontSize: '12px', color: '#b45309', marginTop: '2px' }}>
-          This token never expires — stolen tokens stay valid forever
+          This token never expires - stolen tokens stay valid forever
         </p>
       </div>
     </div>
@@ -64,7 +64,7 @@ export function ExpiryBadge({ info }: { info: ExpiryInfo }) {
       <span style={{ fontSize: '16px', marginTop: '1px' }}>{soon ? '⚠️' : '✅'}</span>
       <div>
         <p style={{ fontSize: '13px', fontWeight: 600, color: soon ? '#92400e' : '#166534' }}>
-          Valid — expires in {humanDelta(delta)}{soon ? ' (expiring soon)' : ''}
+          Valid - expires in {humanDelta(delta)}{soon ? ' (expiring soon)' : ''}
         </p>
         <p style={{ fontSize: '12px', color: soon ? '#b45309' : '#16a34a', marginTop: '2px' }}>
           {info.at.toUTCString()}
